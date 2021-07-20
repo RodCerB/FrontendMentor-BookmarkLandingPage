@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
 :root {
-  --clr-titles: #35323E;
-  --clr-texts: #9E9AA7;
-  --clr-blue: #2ACFCF;
-  --clr-purple: #3B3054;
-  --clr-grey: #F0F1F6;
-  --clr-red: #F46262;
+  --clr-blue: hsl(231, 69%, 60%);
+  --clr-navy: hsl(229, 31%, 21%);
+  --clr-red: hsl(0, 94%, 66%);
+  --clr-text: hsl(229, 8%, 60%);
+  --transition: all 0.3s linear;
 }
 
 *{
@@ -16,4 +16,41 @@
 
 body {
   margin: 0;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.125rem;
+  color: var(--clr-text);
+}
+
+h1, h2, h3 {
+  color: var(--clr-navy);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-navy);
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--clr-red);
+}
+
+button{
+  background-color: var(--clr-blue);
+  color: white;
+  font: inherit;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--clr-blue);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btnRed{
+  background-color: var(--clr-red);
+  border: 2px solid var(--clr-red);
+}
+.btnRed:hover{
+  background-color: white;
+  border: 2px solid var(--clr-red);
+  color: var(--clr-red);
+  box-shadow: 0 0.5rem 5px rgba(94, 94, 245, 0.068);
 }

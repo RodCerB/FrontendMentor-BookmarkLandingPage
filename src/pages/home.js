@@ -1,9 +1,10 @@
-
+import NavBar from "../components/navbar";
 
 function Home() {
   return (
     <div className="App">
-     Hello
+     <NavBar />
+     Aello
     </div>
   );
 }
