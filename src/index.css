@@ -3,6 +3,7 @@
 :root {
   --clr-blue: hsl(231, 69%, 60%);
   --clr-navy: hsl(229, 31%, 21%);
+  --clr-clear-navy: hsla(229, 31%, 21%, 0.9);
   --clr-red: hsl(0, 94%, 66%);
   --clr-text: hsl(229, 8%, 60%);
   --transition: all 0.3s linear;
