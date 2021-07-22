@@ -17,12 +17,17 @@
 
 body {
   margin: 0;
-  padding-top: 7.875rem;
+  padding-top: 10.375rem;
   font-family: 'Rubik', sans-serif;
   font-size: 1.125rem;
   color: var(--clr-text);
-}
 
+}
+@media (max-width: 900px) {
+    body{
+      padding-top: 7.875rem;
+    }
+}
 h1, h2, h3 {
   color: var(--clr-navy);
 }

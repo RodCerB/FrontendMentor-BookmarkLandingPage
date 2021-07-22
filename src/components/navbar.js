@@ -48,8 +48,11 @@ const Wrapper = styled.main`
     
     section{
         padding: 3.625rem 10.625rem;
+        padding-bottom: 1rem;
+        
     }
     .sectionMobile, .sectionDesktop{
+        background-color: white;
         position: fixed;
         top: 0;
         left: 0;
