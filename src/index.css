@@ -21,15 +21,14 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 1.125rem;
   color: var(--clr-text);
+}
 
-}
-@media (max-width: 900px) {
-    body{
-      padding-top: 7.875rem;
-    }
-}
 h1, h2, h3 {
   color: var(--clr-navy);
+}
+h1{
+  font-size:2.75rem;
+  font-weight: 500;
 }
 
 a {
@@ -42,14 +41,28 @@ a:hover {
 }
 
 button{
-  background-color: var(--clr-blue);
   color: white;
   font: inherit;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
-  border: 2px solid var(--clr-blue);
   cursor: pointer;
   transition: var(--transition);
+}
+.btnBlue{
+  background-color: var(--clr-blue);
+  border: 2px solid var(--clr-blue);
+}
+.btnBlue:hover{
+  background-color: white;
+  color: var(--clr-blue);
+}
+.btnGrey{
+  background-color: #f7f7f7;
+  border: 2px solid #f7f7f7;
+  color: grey;
+}
+.btnGrey:hover{
+  background-color: white;
 }
 .btnRed{
   background-color: var(--clr-red);
@@ -57,7 +70,17 @@ button{
 }
 .btnRed:hover{
   background-color: white;
-  border: 2px solid var(--clr-red);
   color: var(--clr-red);
   box-shadow: 0 0.5rem 5px rgba(94, 94, 245, 0.068);
+}
+
+
+@media (max-width: 900px) {
+  body{
+    padding-top: 7.875rem;
+    font-size: 1rem;
+  }
+  h1{
+    font-size: 2rem;
+  }
 }

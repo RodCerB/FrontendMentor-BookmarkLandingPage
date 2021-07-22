@@ -21,7 +21,7 @@ const NavBar = () => {
                 :
                 <>
                 <img src={iconBM} alt="icon-bookmark" />
-                <button className='hamburgerbtn' onClick={(e)=>setOpenNav(!openNav)}>
+                <button className='hamburgerbtn btnBlue' onClick={(e)=>setOpenNav(!openNav)}>
                     <img src={iconHG} alt="icon-hamburger" />
                 </button>
                 </>
@@ -47,6 +47,7 @@ const NavBar = () => {
 const Wrapper = styled.main`
     
     section{
+        z-index: 99999;
         padding: 3.625rem 10.625rem;
         padding-bottom: 1rem;
         
@@ -74,6 +75,7 @@ const Wrapper = styled.main`
     @media (max-width: 900px) {
         section{
             padding: 2.5rem 2rem;
+            padding-bottom: 1rem;
         }
         .hamburgerbtn{
             background: none;
