@@ -14,19 +14,25 @@ const NavBar = () => {
 
     if(isMobile){
         return (<Wrapper>
-            <section>
+            <section className='sectionMobile'>
+                {openNav 
+                ?
+                <MobileNavbar setOpenNav={setOpenNav}/>
+                :
+                <>
                 <img src={iconBM} alt="icon-bookmark" />
                 <button className='hamburgerbtn' onClick={(e)=>setOpenNav(!openNav)}>
                     <img src={iconHG} alt="icon-hamburger" />
                 </button>
-                {openNav && <MobileNavbar />}
+                </>
+                }
             </section>
             
         </Wrapper>)
     }
 
     return (<Wrapper>
-        <section>
+        <section className='sectionDesktop'>
             <img src={iconBM} alt="icon-bookmark" />
             <div className='links'>
                     <a href="/">FEATURES</a>
@@ -42,6 +48,12 @@ const Wrapper = styled.main`
     
     section{
         padding: 3.625rem 10.625rem;
+    }
+    .sectionMobile, .sectionDesktop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -51,7 +63,6 @@ const Wrapper = styled.main`
         display: flex;
         align-items: center;
         gap: 2.875rem;
-
         p{
             color: var(--clr-navy);
         }
