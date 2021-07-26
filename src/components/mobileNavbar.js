@@ -53,8 +53,11 @@ const Wrapper = styled.main`
         flex-direction: column;
     }
     .linksSocial{
+        position: absolute;
+        left: 0;
+        bottom: 10%;
+        width: 100%;
         text-align: center;
-        margin-top: 13.5rem;
         a{
             border: none;
             margin: 1.25rem;
