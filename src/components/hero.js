@@ -78,9 +78,6 @@ const Wrapper = styled.main`
             }
         }
         .heroLogo{
-            /* img{
-                width: 40vw;
-            } */
             margin-bottom: 0;
             .blueBG{
                 height: 18rem;
