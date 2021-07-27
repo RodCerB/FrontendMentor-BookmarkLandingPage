@@ -6,7 +6,7 @@ import tab3 from '../assets/illustration-features-tab-3.svg'
 import { useMediaQuery } from 'react-responsive'
  
 const Features = () => {
-    const [value, setValue] = useState(1)
+    const [value, setValue] = useState(0)
     const feats = ['Simple Bookmarking', 'Speedy Searching', 'Easy Sharing']
     const tabs = [
         {   img:tab1,
@@ -95,16 +95,17 @@ const Wrapper = styled.main`
             img{
                 position: relative;
                 z-index: 500;
-                width: 85%;
+                width: 85vw;
                 min-height: 12.625rem;
+                max-height: 12.8125rem;
             }
             .blueBG{
                 position: absolute;
                 background-color: var(--clr-blue);
                 border-bottom-right-radius: 100px;
-                width: 77%;
+                width: 77vw;
                 min-height: 12.5rem;
-                left: 0;
+                left: -1.875rem;
                 top: 2rem;
             }
         }
@@ -118,8 +119,7 @@ const Wrapper = styled.main`
 
     @media (min-width: 900px){
         section{
-            padding: 0;
-            margin-bottom: 5rem;
+            padding: 0; 
             .apresentation{
                 max-width: 33rem;
                 margin: auto;
@@ -158,7 +158,7 @@ const Wrapper = styled.main`
                     img{
                         width: 37vw;
                         margin-left: 10.563rem;
-                        min-height: auto;
+                        height:25rem;
                     }
                     .blueBG{
                         top: 5.125rem;

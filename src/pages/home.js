@@ -1,6 +1,7 @@
 import NavBar from "../components/navbar";
 import Hero from '../components/hero'
 import Features from "../components/features";
+import Extensions from "../components/extensions";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
      <NavBar />
      <Hero />
      <Features />
+     <Extensions />
      Aello
     </div>
   );
