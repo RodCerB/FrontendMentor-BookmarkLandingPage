@@ -6,7 +6,7 @@ import tab3 from '../assets/illustration-features-tab-3.svg'
 import { useMediaQuery } from 'react-responsive'
  
 const Features = () => {
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(1)
     const feats = ['Simple Bookmarking', 'Speedy Searching', 'Easy Sharing']
     const tabs = [
         {   img:tab1,
@@ -31,7 +31,7 @@ const Features = () => {
     return <Wrapper>
         <section>
             <h2>Features</h2>
-            <p>Our aim is to make it quick and easy for you to access your favorite websites. Your bokmarks sync between your devices so you can access them on the go.</p>
+            <p className='apresentation'>Our aim is to make it quick and easy for you to access your favorite websites. Your bokmarks sync between your devices so you can access them on the go.</p>
             <div className='feats-container'>
                 {feats.map((feat, id) =>{
                     return <div className='feat-ind' onClick={()=>setValue(id)}>
@@ -43,12 +43,13 @@ const Features = () => {
             </div>
             <div className='feats-tabs'>
                 <div className='feat-logo'>
-                    <img src={tabs[value].img} alt="feat-img" />
                     <div className='blueBG'/>
+                    <img src={tabs[value].img} alt="feat-img" />
                 </div>
                 <div className='feat-txt'>
                     <h2>{tabs[value].title}</h2>
                     <p>{tabs[value].txt}</p>
+                    {isDesktop && <button className='btnBlue'>More Info</button>}
                 </div>
             </div>
         </section>
@@ -111,6 +112,67 @@ const Wrapper = styled.main`
             padding: 0 1.875rem;
             p{
                 font-size: 0.875rem;
+            }
+        }
+    }
+
+    @media (min-width: 900px){
+        section{
+            padding: 0;
+            margin-bottom: 5rem;
+            .apresentation{
+                max-width: 33rem;
+                margin: auto;
+            }
+        
+            .feats-container{
+                display: flex;
+                gap: 5rem;
+                width: fit-content;
+                margin: 4.563rem auto;
+                font-size: 1rem;
+
+                .feat-ind{
+                    padding: 0;
+                    border: none;
+
+                    .feat-btn{
+                        margin: 0;
+                        padding: 0 2.563rem 1rem;
+                    }
+                }
+            }
+
+            .feats-tabs{
+                display: flex;
+                gap: 7.625rem;
+
+                .feat-txt{
+                    text-align: left;
+                    max-width: 27.625rem;
+                    padding: 0;
+                    margin-top: 4.5rem;
+                }
+                .feat-logo{
+                    margin: 0;
+                    img{
+                        width: 37vw;
+                        margin-left: 10.563rem;
+                        min-height: auto;
+                    }
+                    .blueBG{
+                        top: 5.125rem;
+                        width: 42.6vw;
+                        height: 21.875rem;
+                    }
+                }
+                .btnBlue{
+                    margin-top: 2.5rem;
+                }
+                .btnBlue:hover{
+                    background-color: var(--clr-blue);
+                    color: white;
+                }
             }
         }
     }

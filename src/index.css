@@ -25,10 +25,13 @@ body {
 
 h1, h2, h3 {
   color: var(--clr-navy);
+  font-weight: 500;
 }
 h1{
   font-size:2.75rem;
-  font-weight: 500;
+}
+h2{
+  font-size: 1.75rem;
 }
 
 a {
