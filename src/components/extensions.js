@@ -13,7 +13,7 @@ const Extensions = () => {
     return <Wrapper>
         <section>
         <h2>Download the extension</h2>
-        <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
+        <p className='brows-txt'>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
         <div className='brows-container'>
             {browsers.map((brow, id)=>{
                 return <div className={`brow-ind num-${id}`} key={id}>
@@ -56,6 +56,7 @@ const Wrapper = styled.main`
                     margin: 1rem 0 2rem;
                 }
                 .dots{
+                    width: 100%;
                     margin-bottom: 1.375rem;
                 }
                 .btnBlue{
@@ -65,9 +66,31 @@ const Wrapper = styled.main`
         }
     }
 
-    @media (min-width: 900px){
+    @media (min-width: 1100px){
         section{
             margin-top: 13.5rem;
+            width: 65vw;
+            font-size: 1rem;
+            
+            .brows-txt{
+                width: 37vw;
+                margin: 2rem auto 0;
+            }
+
+            .brows-container{
+                display: flex;
+                gap: 2rem;
+
+                .brow-ind{
+                    height: fit-content;
+                }
+                .num-1{
+                    margin-top: 2.5rem;
+                }
+                .num-2{
+                    margin-top: 5rem;
+                }
+            }
         }
     }
 `
