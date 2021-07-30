@@ -158,7 +158,7 @@ const Wrapper = styled.main`
                     img{
                         width: 37vw;
                         margin-left: 10.563rem;
-                        height:25rem;
+                        min-height:25rem;
                     }
                     .blueBG{
                         top: 5.125rem;

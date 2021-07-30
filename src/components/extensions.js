@@ -17,10 +17,10 @@ const Extensions = () => {
         <div className='brows-container'>
             {browsers.map((brow, id)=>{
                 return <div className={`brow-ind num-${id}`} key={id}>
-                    <img src={brow.img} alt="browser logo" />
+                    <img src={brow.img} alt="browser logo" className='logo'/>
                     <h3>Add to {brow.name}</h3>
                     <p>Minimum version {brow.ver}</p>
-                    <img src={dots} alt="dots" />
+                    <img src={dots} alt="dots" className='dots'/>
                     <button className='btnBlue'>Add & Install Extension</button>
                 </div>
             })}
@@ -34,8 +34,8 @@ const Extensions = () => {
 const Wrapper = styled.main`
     section{
         text-align: center;
-        margin-top: 9.8125rem;
-        padding: 0 3rem;
+        margin: 9.8125rem auto 0;
+        width: 75vw;
         font-size: 0.875rem;
         p{
             margin-top: 1.5rem;
@@ -48,8 +48,20 @@ const Wrapper = styled.main`
                 margin-bottom: 2.375rem;
                 border-radius: 10px;
                 box-shadow: 0 0.8rem 1em rgba(94, 94, 245, 0.315);
+                
+                .logo{
+                    margin: 3rem 0 2rem;
+                }
+                p{
+                    margin: 1rem 0 2rem;
+                }
+                .dots{
+                    margin-bottom: 1.375rem;
+                }
+                .btnBlue{
+                    margin-bottom: 1.375rem;
+                }
             }
-
         }
     }
 
