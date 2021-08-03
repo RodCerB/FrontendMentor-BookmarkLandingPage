@@ -4,7 +4,7 @@ import arrw from '../assets/icon-arrow.svg'
 
 const Questions = () => {
     const [index, setIndex] = useState(null)
-    const qa = [
+    const qas = [
         {
             quest:'What is Bookmark?',
             answ: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quas voluptate tenetur minima suscipit alias accusantium? Eius autem nostrum, error quasi dolore magni doloremque repellat rem perferendis temporibus voluptatibus magnam at? Dolor ipsam tempora consectetur tenetur labore repellendus expedita officia beatae, consequatur modi voluptate aspernatur quaerat? Adipisci fugit obcaecati magni deleniti cum voluptas est veritatis tempore itaque nihil. Ut asperiores id iusto earum eius'
@@ -22,11 +22,29 @@ const Questions = () => {
             answ: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, tempora est consequatur rerum architecto officiis ab magnam sunt esse? Minima accusantium, libero itaque unde enim reprehenderit iusto optio corporis soluta totam dolores aut labore rerum ipsa sint, dolorum necessitatibus nihil odio deleniti illo distinctio accusamus. Praesentium aspernatur laboriosam quod consequuntur ex, voluptatum quasi numquam sint tempore eligendi corporis aut autem dignissimos dolorem repellendus totam quisquam asperiores!'
         },
     ]
+    const showQuest = (id) =>{
+        if(id===index){
+            setIndex(null)
+        }
+        else(setIndex(id))
+    }
 
     return <Wrapper>
         <section>
             <h2>Frequently Asked Questions</h2>
             <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+            <div className='qaContainer'>
+                {qas.map((qa, id)=>{
+                    return <div className='qaInd' key={id} onClick={()=>showQuest(id)}>
+                        <div className='qaTitle'>
+                            <p className='qaType'>{qa.quest}</p>
+                            <img src={arrw} alt="arrow" className={id===index ? 'arrowDown rotate' : 'arrowDown'}/>
+                        </div>
+                        <p className={id===index ? 'text' : 'text out'}>{qa.answ}</p>
+                    </div>
+                })}
+            </div>
+            <button className='btnBlue'>More Info</button>
         </section>
     </Wrapper>
 }
@@ -39,7 +57,55 @@ const Wrapper = styled.main`
         p{
             margin-top: 2.25rem;
         }
+        .qaContainer{
+            margin: 3.8125rem 0 3.25rem;
+            border-top: 1px solid var(--clr-text);
+            .qaInd{
+                padding: 1.5rem 0;
+                border-bottom: 1px solid var(--clr-text);
+                cursor: pointer;
+                text-align: left;
+
+                .qaTitle{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .qaType{
+                        color: var(--clr-navy);
+                        margin: 0;
+                    }
+                    
+                }
+            }
+            .qaInd:hover{
+                .qaType{
+                    color: var(--clr-red);
+                }
+            }
+        }
+
+        .rotate{
+            transform: rotate(180deg);
+        }
+        .out{
+            display: none;
+        }
     }
+
+
+    @media (max-width: 900px){
+            section{
+                width: 85vw;
+                margin: 8.8125rem auto 0;
+                
+                .qaContainer{
+                    font-size: 0.875rem;
+                }
+            
+            }
+        }
+
 
 `
 
