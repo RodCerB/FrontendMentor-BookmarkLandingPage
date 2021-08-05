@@ -4,6 +4,7 @@ import Features from "../components/features";
 import Extensions from "../components/extensions";
 import Questions from "../components/questions";
 import Contact from "../components/contact";
+import Footer from "../components/footer";
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
      <Extensions />
      <Questions />
      <Contact />
-     Aello
+     <Footer />
     </div>
   );
 }
